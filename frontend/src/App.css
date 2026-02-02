@@ -1,0 +1,101 @@
+/* ==================================================
+   GLOBAL APP STYLES (Production Ready)
+   Theme: Leafy Green Garden
+================================================== */
+
+/* Root variables */
+:root {
+  --bg: #ecf39e;
+  --card: #90a955;
+  --title: #31572c;
+  --text: #4f772d;
+  --highlight: #132a13;
+  --border: rgba(79, 119, 45, 0.25);
+  --white-soft: #f7fbe5;
+  --error: #9b2226;
+}
+
+/* ==================================================
+   ROOT + BODY RESET
+================================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+}
+
+/* Vite mount point — DO NOT center here */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ==================================================
+   BASE RESETS
+================================================== */
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Remove Vite demo junk */
+.logo,
+.read-the-docs,
+.card {
+  display: none !important;
+}
+
+/* ==================================================
+   SCROLLBAR (SUBTLE)
+================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 119, 45, 0.45);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 119, 45, 0.75);
+}
+
+/* ==================================================
+   TEXT SELECTION
+================================================== */
+
+::selection {
+  background: rgba(144, 169, 85, 0.6);
+  color: var(--highlight);
+}

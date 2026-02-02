@@ -1,0 +1,1451 @@
+/* =========================================================
+   🌿 AI RESUME SCREENER – ENTERPRISE UI SYSTEM
+   Theme: Premium Leafy SaaS (FINAL)
+========================================================= */
+
+/* ===================== TOKENS ===================== */
+:root {
+  --bg-main: #ecf39e;
+  --bg-soft: #f7fbe5;
+  --bg-card: #e9f5db;
+
+  --green-dark: #132a13;
+  --green-mid: #344e41;
+  --green-soft: #588157;
+
+  --accent: #90a955;
+  --warning: #bc4749;
+  --neutral: #6c757d;
+
+  --border-soft: rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 18px 45px rgba(0, 0, 0, 0.14);
+  --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+}
+
+/* ===================== RESET ===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--green-mid);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===================== ROOT CENTER ===================== */
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ================= APP SHELL ================= */
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: flex-start;   /* natural top flow */
+
+  background: var(--bg-main);
+}
+
+/* ================= MAIN CANVAS ================= */
+.main-wrapper {
+  width: 100%;
+  max-width: 1400px;           /* 🔥 premium wide canvas */
+  padding: 72px 40px 120px;    /* 🔥 enterprise spacing */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* 🔥 EVERYTHING centered */
+
+  gap: 80px;                   /* 🔥 vertical rhythm */
+}
+/* =========================================================
+   🧠 BRAND HEADER
+========================================================= */
+/* =========================================================
+   🌿 ULTRA PREMIUM HEADER – AI RESUME SCREENER
+========================================================= */
+
+.centered-header {
+  position: relative;
+  width: 100%;
+  max-width: 1100px; /* 🔥 wider hero */
+  padding: 80px 56px;
+
+  background:
+    radial-gradient(
+      1200px 300px at top center,
+      rgba(144, 169, 85, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(180deg, var(--bg-soft), var(--bg-card));
+
+  border-radius: 36px;
+  text-align: center;
+
+  box-shadow:
+    0 50px 120px rgba(0, 0, 0, 0.18),
+    0 12px 28px rgba(0, 0, 0, 0.12);
+
+  margin-bottom: 96px;
+  overflow: hidden;
+}
+
+/* Soft glow accent */
+.centered-header::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(144, 169, 85, 0.45),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* =========================================================
+   🧠 APP TITLE
+========================================================= */
+
+.app-title {
+  font-size: clamp(42px, 5vw, 56px); /* 🔥 responsive hero text */
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+
+  background: linear-gradient(
+    180deg,
+    var(--green-dark),
+    #2f4f3e
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin: 0;
+}
+
+/* =========================================================
+   📌 SUBTITLE
+========================================================= */
+
+.app-subtitle {
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: var(--green-mid);
+  opacity: 0.85;
+}
+
+/* =========================================================
+   📱 RESPONSIVE TUNING
+========================================================= */
+
+@media (max-width: 768px) {
+  .centered-header {
+    padding: 56px 32px;
+    border-radius: 28px;
+  }
+
+  .app-subtitle {
+    font-size: 13px;
+    letter-spacing: 0.8px;
+  }
+}
+/* =========================================================
+   📄 ULTRA PREMIUM UPLOAD / JD CARD
+========================================================= */
+
+.upload-card {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+
+  padding: 72px 64px;
+  margin-bottom: 120px;
+
+  background:
+    radial-gradient(
+      900px 240px at top center,
+      rgba(144, 169, 85, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(180deg, var(--bg-soft), var(--bg-card));
+
+  border-radius: 40px;
+
+  box-shadow:
+    0 60px 140px rgba(0, 0, 0, 0.22),
+    0 18px 36px rgba(0, 0, 0, 0.14);
+
+  overflow: hidden;
+}
+
+/* Soft top glow */
+.upload-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(144, 169, 85, 0.35),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* =========================================================
+   🧠 CARD HEADER
+========================================================= */
+
+.upload-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.upload-title {
+  font-size: clamp(28px, 3.5vw, 36px);
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  line-height: 1.15;
+
+  background: linear-gradient(
+    180deg,
+    var(--green-dark),
+    #2f4f3e
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin: 0;
+}
+
+.upload-subtitle {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+
+  color: var(--green-mid);
+  opacity: 0.85;
+}
+
+/* =========================================================
+   ✨ SECTION SEPARATION (VISUAL RHYTHM)
+========================================================= */
+
+.upload-card > *:not(:last-child) {
+  position: relative;
+}
+
+.upload-card > *:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  margin: 40px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(19, 42, 19, 0.35),
+    transparent
+  );
+}
+
+/* =========================================================
+   📱 RESPONSIVE POLISH
+========================================================= */
+
+@media (max-width: 768px) {
+  .upload-card {
+    padding: 48px 28px;
+    border-radius: 30px;
+  }
+
+  .upload-header {
+    margin-bottom: 36px;
+  }
+
+  .upload-subtitle {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* =========================================================
+   🧠 ULTRA PREMIUM JOB DESCRIPTION TEXTAREA
+========================================================= */
+
+.jd-textarea {
+  width: 100%;
+  min-height: 220px;
+
+  padding: 26px 28px;
+  margin-bottom: 40px;
+
+  border-radius: 22px;
+  border: 2px solid transparent;
+
+  background:
+    linear-gradient(var(--bg-soft), var(--bg-soft)) padding-box,
+    linear-gradient(
+      180deg,
+      rgba(19, 42, 19, 0.25),
+      rgba(144, 169, 85, 0.45)
+    ) border-box;
+
+  font-size: 15px;
+  line-height: 1.85;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+
+  color: var(--green-dark);
+  resize: vertical;
+
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 20px 50px rgba(0, 0, 0, 0.12);
+
+  transition:
+    border 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.15s ease,
+    background 0.25s ease;
+}
+
+/* -------------------- Placeholder -------------------- */
+.jd-textarea::placeholder {
+  color: rgba(52, 78, 65, 0.55);
+  font-weight: 600;
+}
+
+/* -------------------- Hover -------------------- */
+.jd-textarea:hover {
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 24px 60px rgba(0, 0, 0, 0.16);
+}
+
+/* -------------------- Focus (Typing Mode) -------------------- */
+.jd-textarea:focus {
+  outline: none;
+
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(
+      180deg,
+      var(--green-dark),
+      var(--accent)
+    ) border-box;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    inset 0 3px 8px rgba(0, 0, 0, 0.08),
+    0 0 0 6px rgba(52, 78, 65, 0.18),
+    0 28px 70px rgba(0, 0, 0, 0.22);
+}
+
+/* -------------------- Scrollbar (Textarea Only) -------------------- */
+.jd-textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.jd-textarea::-webkit-scrollbar-thumb {
+  background: rgba(52, 78, 65, 0.45);
+  border-radius: 6px;
+}
+
+.jd-textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(52, 78, 65, 0.75);
+}
+
+/* -------------------- Mobile Polish -------------------- */
+@media (max-width: 768px) {
+  .jd-textarea {
+    min-height: 180px;
+    padding: 20px 22px;
+    font-size: 14px;
+    border-radius: 18px;
+  }
+}
+/* =========================================================
+   🚀 ULTRA PREMIUM ACTION ROW
+========================================================= */
+
+.upload-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* ===================== FILE UPLOAD ===================== */
+
+.file-upload {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 16px 30px;
+
+  border-radius: var(--radius-pill);
+  background:
+    linear-gradient(180deg, #a7c957, #90a955);
+
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+
+  color: var(--green-dark);
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 14px 32px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+/* Upload icon */
+.file-upload::before {
+  content: "📄";
+  font-size: 16px;
+}
+
+/* Hover */
+.file-upload:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Active */
+.file-upload:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.file-upload input {
+  display: none;
+}
+
+/* ===================== PRIMARY CTA ===================== */
+
+.primary-btn {
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--green-dark),
+      #0e1f0e
+    );
+
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+
+  padding: 18px 52px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 18px 45px rgba(0, 0, 0, 0.28);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+/* Subtle glow ring */
+.primary-btn::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(144, 169, 85, 0.35),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Hover */
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 26px 65px rgba(0, 0, 0, 0.35);
+}
+
+.primary-btn:hover::after {
+  opacity: 1;
+}
+
+/* Active */
+.primary-btn:active {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Disabled */
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===================== MOBILE POLISH ===================== */
+@media (max-width: 768px) {
+  .upload-row {
+    gap: 18px;
+  }
+
+  .primary-btn {
+    padding: 16px 42px;
+    font-size: 14px;
+  }
+
+  .file-upload {
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   📊 ULTRA PREMIUM RESULTS SECTION
+========================================================= */
+
+.results-section {
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 72px;
+  padding: 0 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===================== TITLE WRAPPER ===================== */
+
+.results-header {
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 36px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Title */
+.results-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--green-dark);
+  letter-spacing: 0.4px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Title icon */
+.results-title::before {
+  content: "📊";
+  font-size: 26px;
+}
+
+/* Subtitle */
+.results-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green-mid);
+  opacity: 0.85;
+}
+
+/* ===================== DIVIDER ===================== */
+
+.results-divider {
+  width: 100%;
+  max-width: 1100px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(19, 42, 19, 0.25),
+    transparent
+  );
+  margin-bottom: 32px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 768px) {
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .results-title {
+    font-size: 26px;
+  }
+
+  .results-title::before {
+    font-size: 22px;
+  }
+}
+
+/* =========================================================
+   📊 ULTRA PREMIUM TABLE WRAPPER
+========================================================= */
+
+.table-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(247, 251, 229, 0.95),
+      rgba(233, 245, 219, 0.95)
+    );
+
+  border-radius: 28px;
+  padding: 6px; /* inner frame */
+
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(19, 42, 19, 0.08);
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===================== INNER SCROLL ===================== */
+
+.table-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(19, 42, 19, 0.08);
+}
+
+/* Horizontal scroll (if needed) */
+.table-wrapper {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(19, 42, 19, 0.4) transparent;
+}
+
+/* ===================== SCROLLBAR ===================== */
+
+.table-wrapper::-webkit-scrollbar {
+  height: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(19, 42, 19, 0.35),
+    rgba(19, 42, 19, 0.55)
+  );
+  border-radius: 999px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    border-radius: 20px;
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.16),
+      inset 0 0 0 1px rgba(19, 42, 19, 0.06);
+  }
+}
+/* =========================================================
+   📊 ULTRA-PREMIUM RESULTS TABLE (STABLE FINAL)
+========================================================= */
+
+/* ================= TABLE WRAPPER ================= */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--bg-soft);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  padding-bottom: 6px; /* visual breathing */
+}
+
+/* ================= TABLE ================= */
+.results-table {
+  width: 100%;
+  min-width: 1300px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto; /* 🔥 MOST IMPORTANT FIX */
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.results-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: linear-gradient(180deg, var(--accent), #a7c957);
+  padding: 22px 26px;
+
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--green-dark);
+  text-align: left;
+  white-space: nowrap;
+
+  border-bottom: 2px solid rgba(19, 42, 19, 0.15);
+}
+
+/* =========================================================
+   COLUMN SYSTEM (BALANCED + FREE FLOW)
+========================================================= */
+
+/* Candidate */
+.results-table th:nth-child(1),
+.results-table td:nth-child(1) {
+  width: 240px;
+}
+
+/* Score */
+.results-table th:nth-child(2),
+.results-table td:nth-child(2) {
+  width: 130px;
+  text-align: center;
+}
+
+/* Verdict */
+.results-table th:nth-child(3),
+.results-table td:nth-child(3) {
+  width: 180px;
+}
+
+/* Strengths */
+.results-table th:nth-child(4),
+.results-table td:nth-child(4) {
+  min-width: 360px;
+}
+
+/* Gaps (🔥 FREE SIZE – NEVER COLLAPSES) */
+.results-table th:nth-child(5),
+.results-table td:nth-child(5) {
+  min-width: 420px;
+}
+
+/* =========================================================
+   BODY CELLS
+========================================================= */
+.results-table tbody td {
+  padding: 26px 26px;
+  font-size: 14px;
+  line-height: 1.7;
+  vertical-align: top; /* 🔥 CRITICAL */
+
+  background: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+  transition: background 0.25s ease;
+}
+
+/* =========================================================
+   ROW INTERACTION
+========================================================= */
+.result-row:hover td {
+  background: rgba(144, 169, 85, 0.22);
+  cursor: pointer;
+}
+
+/* =========================================================
+   CANDIDATE CELL
+========================================================= */
+.candidate-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   SCORE BADGE
+========================================================= */
+.score {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.score.strong {
+  background: var(--green-dark);
+  color: #fff;
+}
+
+.score.moderate {
+  background: var(--accent);
+  color: var(--green-dark);
+}
+
+.score.weak {
+  background: var(--warning);
+  color: #fff;
+}
+
+/* =========================================================
+   VERDICT
+========================================================= */
+.verdict-text {
+  font-weight: 800;
+  color: var(--green-mid);
+}
+
+/* =========================================================
+   STRENGTHS (PILLS)
+========================================================= */
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* =========================================================
+   GAPS (FIXED FOREVER)
+========================================================= */
+.gaps-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* Empty gaps message – FINAL FIX */
+.gaps-empty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 100%;
+  padding: 12px 20px;
+  border-radius: 999px;
+
+  background: linear-gradient(180deg, #e5e7eb, #9ca3af);
+  color: #1f2937;
+
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* =========================================================
+   PILLS (COMMON)
+========================================================= */
+.pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+
+  background: var(--green-soft);
+  color: #fff;
+}
+
+.pill.warning {
+  background: var(--warning);
+}
+
+.pill.neutral {
+  background: var(--neutral);
+}
+
+/* =========================================================
+   ROUNDING (FIRST / LAST ROW)
+========================================================= */
+.results-table tbody tr:first-child td:first-child {
+  border-top-left-radius: 20px;
+}
+
+.results-table tbody tr:first-child td:last-child {
+  border-top-right-radius: 20px;
+}
+
+.results-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+.results-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
+
+/* =========================================================
+   FLEXIBLE SKILL / GAP BOXES
+========================================================= */
+.pill-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 100%;
+}
+
+/* Skill / Gap Pills */
+.pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--green-soft);
+  color: #fff;
+}
+
+.pill.warning {
+  background: var(--warning);
+}
+
+.pill.neutral {
+  background: var(--neutral);
+}
+
+/* =========================================================
+   SCORE BADGE
+========================================================= */
+.score {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.score.strong {
+  background: var(--green-dark);
+  color: #fff;
+}
+
+.score.moderate {
+  background: var(--accent);
+  color: var(--green-dark);
+}
+
+.score.weak {
+  background: var(--warning);
+  color: #fff;
+}
+
+/* =========================================================
+   RESPONSIVE (SAFE FALLBACK)
+========================================================= */
+@media (max-width: 1024px) {
+  .results-table {
+    min-width: 1100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .results-table {
+    min-width: 1000px;
+  }
+
+  .results-table thead th {
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  .results-table tbody td {
+    padding: 20px;
+  }
+}
+/* =========================================================
+   🏆 ULTRA-PREMIUM SCORE BADGES
+========================================================= */
+
+.score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 64px;
+  padding: 10px 22px;
+
+  border-radius: var(--radius-pill);
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    0 10px 24px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+/* ===================== STRONG ===================== */
+.score.strong {
+  background: linear-gradient(
+    180deg,
+    #1b4332,
+    var(--green-dark)
+  );
+  color: #ffffff;
+}
+
+/* ===================== MODERATE ===================== */
+.score.moderate {
+  background: linear-gradient(
+    180deg,
+    #b5c99a,
+    var(--accent)
+  );
+  color: var(--green-dark);
+}
+
+/* ===================== WEAK ===================== */
+.score.weak {
+  background: linear-gradient(
+    180deg,
+    #d00000,
+    var(--warning)
+  );
+  color: #ffffff;
+}
+
+/* ===================== INTERACTION ===================== */
+.result-row:hover .score {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+/* ===================== ACCESSIBILITY ===================== */
+.score::after {
+  content: "%";
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 2px;
+  opacity: 0.85;
+}
+/* =========================================================
+   🧩 ULTRA-PREMIUM SKILL / GAP PILLS
+========================================================= */
+
+.pill-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px; /* vertical + horizontal spacing */
+  align-items: flex-start;
+}
+
+/* ===================== BASE PILL ===================== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+  user-select: none;
+
+  color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    #6a9c78,
+    var(--green-soft)
+  );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    0 6px 14px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+/* Hover = premium tactile feel */
+.result-row:hover .pill {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+/* ===================== WARNING (GAPS) ===================== */
+.pill.warning {
+  background: linear-gradient(
+    180deg,
+    #e85d5d,
+    var(--warning)
+  );
+  color: #fff;
+}
+
+/* ===================== NEUTRAL ===================== */
+.pill.neutral {
+  background: linear-gradient(
+    180deg,
+    #adb5bd,
+    var(--neutral)
+  );
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+/* ===================== OPTIONAL ICON SUPPORT ===================== */
+.pill::before {
+  content: "•";
+  font-size: 14px;
+  margin-right: 6px;
+  opacity: 0.8;
+}
+
+/* Warning icon */
+.pill.warning::before {
+  content: "⚠";
+}
+
+/* Neutral icon */
+.pill.neutral::before {
+  content: "–";
+}
+
+/* ===================== OVERFLOW SAFETY ===================== */
+.pill-cell {
+  max-width: 100%;
+}
+
+/* Prevent pills from breaking layout */
+.pill {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* =========================================================
+   🧾 ULTRA-PREMIUM CANDIDATE MODAL
+========================================================= */
+
+/* ===================== BACKDROP ===================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(19, 42, 19, 0.55);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  animation: modalFadeIn 0.25s ease;
+}
+
+/* ===================== MODAL CONTAINER ===================== */
+.modal {
+  width: 100%;
+  max-width: 980px;
+  max-height: 92vh;
+
+  background: linear-gradient(
+    180deg,
+    var(--bg-soft),
+    var(--bg-card)
+  );
+
+  border-radius: var(--radius-xl);
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+
+  overflow-y: auto;
+  position: relative;
+
+  animation: modalSlideUp 0.3s ease;
+}
+
+/* ===================== MODAL HEADER ===================== */
+.modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 28px 36px;
+
+  background: linear-gradient(
+    180deg,
+    #ecf39e,
+    #e9f5db
+  );
+
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--green-dark);
+}
+
+/* Close button */
+.modal-close {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+
+  background: var(--green-dark);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* ===================== MODAL SECTIONS ===================== */
+.modal-section {
+  padding: 36px 42px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.modal-section h4 {
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--green-dark);
+}
+
+/* Section text */
+.modal-section p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--green-mid);
+}
+
+/* ===================== EMAIL PREVIEW ===================== */
+.mail-preview {
+  background: linear-gradient(
+    180deg,
+    #eef7d2,
+    var(--bg-card)
+  );
+
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-top: 8px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Email card */
+.mail-preview p {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--green-mid);
+  white-space: pre-line;
+}
+
+/* ===================== SUBTLE DIVIDER ===================== */
+.modal-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,0,0,0.12),
+    transparent
+  );
+  margin: 24px 0;
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* =========================================================
+   ⏳ ULTRA-PREMIUM FULLSCREEN LOADER
+========================================================= */
+
+.loader-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(236, 243, 158, 0.96),
+    rgba(210, 227, 140, 0.92)
+  );
+
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: loaderFadeIn 0.25s ease;
+}
+
+/* ===================== LOADER CARD ===================== */
+.loader-card {
+  background: linear-gradient(
+    180deg,
+    #f7fbe5,
+    #e9f5db
+  );
+
+  border-radius: 28px;
+  padding: 42px 56px;
+
+  display: flex;
+  align-items: center;
+  gap: 26px;
+
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+
+  animation: loaderFloat 1.8s ease-in-out infinite;
+}
+
+/* ===================== SPINNER ===================== */
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  border: 5px solid rgba(19, 42, 19, 0.15);
+  border-top-color: var(--green-dark);
+
+  animation: spin 0.9s linear infinite;
+}
+
+/* ===================== TEXT ===================== */
+.loader-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.loader-main-text {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--green-dark);
+  margin: 0;
+}
+
+.loader-sub-text {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-mid);
+  opacity: 0.9;
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes loaderFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
